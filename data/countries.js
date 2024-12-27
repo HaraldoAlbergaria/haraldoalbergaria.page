@@ -1,4 +1,4 @@
-var countries_dict = {
+var countries = {
   'BR': 'Brasil',
   'AR': 'Argentina',
   'PY': 'Paraguai',
@@ -11,7 +11,7 @@ var countries_dict = {
   'WW': 'Mundo Todo'
 }
 
-var countries_dict_en = {
+var countries_en = {
   'BR': 'Brazil',
   'AR': 'Argentina',
   'PY': 'Paraguay',
