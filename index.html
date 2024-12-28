@@ -153,7 +153,7 @@
 
    if (userLang != 'pt-BR') {
      strings_dict = strings_dict_en;
-     countries_dict = countries_dict_en;
+     countries = countries_en;
      about = about_en;
      exhibits = exhibits_en;
      cities = cities_en;
@@ -228,15 +228,15 @@
 
 
    document.getElementById('cities-title').innerText = strings_dict['CITIES'];
-   document.getElementById('cities-br-title').append(countries_dict['BR']);
-   document.getElementById('cities-ar-title').append(countries_dict['AR']);
-   document.getElementById('cities-py-title').append(countries_dict['PY']);
-   document.getElementById('cities-us-title').append(countries_dict['US']);
-   document.getElementById('cities-it-title').append(countries_dict['IT']);
-   document.getElementById('cities-va-title').append(countries_dict['VA']);
-   document.getElementById('cities-hr-title').append(countries_dict['HR']);
-   document.getElementById('cities-cl-title').append(countries_dict['CL']);
-   document.getElementById('cities-uy-title').append(countries_dict['UY']);
+   document.getElementById('cities-br-title').append(countries['BR']);
+   document.getElementById('cities-ar-title').append(countries['AR']);
+   document.getElementById('cities-py-title').append(countries['PY']);
+   document.getElementById('cities-us-title').append(countries['US']);
+   document.getElementById('cities-it-title').append(countries['IT']);
+   document.getElementById('cities-va-title').append(countries['VA']);
+   document.getElementById('cities-hr-title').append(countries['HR']);
+   document.getElementById('cities-cl-title').append(countries['CL']);
+   document.getElementById('cities-uy-title').append(countries['UY']);
 
    for (var i = 0; i < cities.length; i++) {
      var list_item = document.createElement('P');
@@ -248,11 +248,11 @@
 
 
    document.getElementById('parks-title').innerText = strings_dict['PARKS'];
-   document.getElementById('parks-br-title').append(countries_dict['BR']);
-   document.getElementById('parks-ar-title').append(countries_dict['AR']);
-   document.getElementById('parks-us-title').append(countries_dict['US']);
-   document.getElementById('parks-hr-title').append(countries_dict['HR']);
-   document.getElementById('parks-cl-title').append(countries_dict['CL']);
+   document.getElementById('parks-br-title').append(countries['BR']);
+   document.getElementById('parks-ar-title').append(countries['AR']);
+   document.getElementById('parks-us-title').append(countries['US']);
+   document.getElementById('parks-hr-title').append(countries['HR']);
+   document.getElementById('parks-cl-title').append(countries['CL']);
 
    for (var i = 0; i < parks.length; i++) {
      var list_item = document.createElement('P');
