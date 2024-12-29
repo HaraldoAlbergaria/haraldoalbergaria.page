@@ -21,6 +21,7 @@ if [[ -f $REPO_DIR/$MAP_DIR/$LOC_FILE && -f $REPO_DIR/$MAP_DIR/$CTY_FILE ]];
     rm map/locations.py
     rm map/countries.py
     rm map/user.py
+    rm -fr __pycache__
 fi
 
 exit 0
