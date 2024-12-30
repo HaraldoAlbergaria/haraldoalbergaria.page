@@ -1,6 +1,7 @@
 *.sh
 *.log
 map/build/*
+map/mapbox_token.js
 !map/build/config.py
 !map/build/generate-map-data.py
 !map/build/update-map.sh
