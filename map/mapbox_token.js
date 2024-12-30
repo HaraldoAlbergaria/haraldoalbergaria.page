@@ -1,2 +1,2 @@
 var mapbox_token =
-'pk.eyJ1IjoiaGFyYWxkby1maWxobyIsImEiOiJja2hsd3RubW0wMnRvMnBxeGNhaDR2cjBsIn0.gyAZne8_kr7cOcrvj_Ho6g'
+'pk.eyJ1IjoiaGFyYWxkby1maWxobyIsImEiOiJja2Y4ZTE4cjUwMDk0MnFwZGs0Y2phMTduIn0.__9dME5MxCpO524sjomw2w'
