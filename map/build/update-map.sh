@@ -18,9 +18,6 @@ if [[ -f $REPO_DIR/$MAP_DIR/$LOC_FILE && -f $REPO_DIR/$MAP_DIR/$CTY_FILE ]];
     git add $MAP_DIR/$CTY_FILE
     git commit -m "[auto] Updated Flickr Photos Map"
     git push origin master
-    rm map/locations.py
-    rm map/countries.py
-    rm map/user.py
     rm -fr __pycache__
 fi
 
