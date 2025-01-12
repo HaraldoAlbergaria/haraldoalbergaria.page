@@ -8,6 +8,9 @@ CTY_FILE="countries.py"
 USR_FILE="user.py"
 
 rm $REPO_DIR/$MAP_DIR/$BUILD_DIR/last_total.py
+rm $REPO_DIR/$MAP_DIR/$LOC_FILE
+rm $REPO_DIR/$MAP_DIR/$CTY_FILE
+rm $REPO_DIR/$MAP_DIR/$USR_FILE
 
 $REPO_DIR/$MAP_DIR/$BUILD_DIR/generate-map-data.py
 
