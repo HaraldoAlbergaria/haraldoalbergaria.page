@@ -3,5 +3,6 @@
 map/build/*
 !map/build/config.py
 !map/build/generate-map-data.py
+!map/build/get-countries-photos.py
 !map/build/update-map.sh
 
