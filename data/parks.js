@@ -9,7 +9,9 @@ var parks = [
   [[15.964112, 43.805828], 'HR', 'Parque Nacional Krka'],
   [[-73.088056, -51.056123], 'CL', 'Parque Nacional Torres del Paine'],
   [[-73.124682, -51.431266], 'CL', 'Parque Nacional Bernardo O\'Higgins'],
-  [[-73.234177, -50.330562], 'AR', 'Parque Nacional Los Glaciares']
+  [[-73.234177, -50.330562], 'AR', 'Parque Nacional Los Glaciares'],
+  [[-72.449605, -41.172862], 'CL', 'Parque Nacional Vicente Pérez Rosales'],
+  [[-71.502530, -41.005535], 'AR', 'Parque Nacional Nahuel Huapi']
 ]
 
 var parks_en = [
@@ -23,5 +25,7 @@ var parks_en = [
   [[15.964112, 43.805828], 'HR', 'Krka National Park'],
   [[-73.088056, -51.056123], 'CL', 'Torres del Paine National Park'],
   [[-73.124682, -51.431266], 'CL', 'Bernardo O\'Higgins National Park'],
-  [[-73.234177, -50.330562], 'AR', 'Los Glaciares National Park']
+  [[-73.234177, -50.330562], 'AR', 'Los Glaciares National Park'],
+  [[-72.449605, -41.172862], 'CL', 'Vicente Pérez Rosales National Park'],
+  [[-71.502530, -41.005535], 'AR', 'Nahuel Huapi National Park']
 ]
