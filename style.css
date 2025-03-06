@@ -60,12 +60,12 @@ p.subtitle {
 #icons-panel {
   position: fixed;
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto; /* auto; */
   grid-gap: 20px;
   left: 50%;
   bottom: 50px;
-  width: 772px;
-  margin: 0 0 0 -386px;
+  width: 700px;
+  margin: 0 0 0 -350px;
   z-index: 1;
 }
 
