@@ -6,6 +6,6 @@ user_info = {
   'url': 'https://www.flickr.com/photos/hpfilho/',
   'location': 'Campinas, Brazil',
   'countries': 9,
-  'markers': 736,
-  'photos': 1387
+  'markers': 738,
+  'photos': 1390
 }
