@@ -42,23 +42,23 @@ try:
     log_file = open("{}/map.log".format(run_path), "a")
 except Exception as e:
     print("ERROR: FATAL: Unable to open log file")
-    print(e)
+    print(str(e))
     sys.exit()
 
 # check if there is a config file and import it
 if os.path.exists("{}/config.py".format(run_path)):
     import config
 else:
-    print("ERROR: File 'config.py' not found. Create one and try again.")
-    log_file.write("ERROR: File 'config.py' not found. Create one and try again.")
+    print("ERROR: FATAL: File 'config.py' not found. Create one and try again.")
+    log_file.write("ERROR: FATAL: File 'config.py' not found. Create one and try again.")
     sys.exit()
 
 # check if there is a api_credentials file and import it
 if os.path.exists("{}/api_credentials.py".format(run_path)):
     import api_credentials
 else:
-    print("ERROR: File 'api_credentials.py' not found. Create one and try again.")
-    log_file.write("ERROR: File 'api_credentials.py' not found. Create one and try again.")
+    print("ERROR: FATAL: File 'api_credentials.py' not found. Create one and try again.")
+    log_file.write("ERROR: FATAL: File 'api_credentials.py' not found. Create one and try again.")
     sys.exit()
 
 # Credentials
@@ -122,22 +122,29 @@ try:
     user_id = flickr.urls.lookupUser(api_key=api_key, url='flickr.com/people/{}'.format(user_alias))['user']['id']
 except Exception as e:
     print("ERROR: FATAL: Unable to get user id")
-    print(e)
+    print(str(e))
     log_file.write("ERROR: FATAL: Unable to get user id\n")
-    log_file.write(e)
+    log_file.write('{}\n'.format(str(e)))
     sys.exit()
 
 # get user info
-user_info = flickr.people.getInfo(api_key=api_key, user_id=user_id)
+try:
+    user_info = flickr.people.getInfo(api_key=api_key, user_id=user_id)
+except Exception as e:
+    print("ERROR: FATAL: Unable to get user info")
+    print(str(e))
+    log_file.write("ERROR: FATAL: Unable to get user info\n")
+    log_file.write('{}\n'.format(str(e)))
+    sys.exit()
 
 # get the username
 try:
     user_name = user_info['person']['username']['_content']
 except Exception as e:
     print("ERROR: FATAL: Unable to get user name")
-    print(e)
+    print(str(e))
     log_file.write("ERROR: FATAL: Unable to get user name\n")
-    log_file.write(e)
+    log_file.write('{}\n'.format(str(e)))
     sys.exit()
 
 try:
@@ -163,9 +170,9 @@ try:
     photos_base_url = user_info['person']['photosurl']['_content']
 except Exception as e:
     print("ERROR: FATAL: Unable to get photos base url")
-    print(e)
+    print(str(e))
     log_file.write("ERROR: FATAL: Unable to get photos base url\n")
-    log_file.write(e)
+    log_file.write('{}\n'.format(str(e)))
     sys.exit()
 
 try:
@@ -189,16 +196,27 @@ try:
     log_file.write('{} photos in the photoset\n'.format(total))
     mode = 'photoset'
 except:
-    try:
-        photos = flickr.people.getPublicPhotos(api_key=api_key, user_id=user_id, content_types=0, per_page=photos_per_page)
-        npages = int(photos['photos']['pages'])
-        total = int(photos['photos']['total'])
-    except Exception as e:
-        print("ERROR: FATAL: Unable to get photos")
-        print(e)
-        log_file.write("ERROR: FATAL: Unable to get photos\n")
-        log_file.write(e)
-        sys.exit()
+    max_tries = 10
+    for tries in range(1, max_tries+1):
+        try:
+            photos = flickr.people.getPublicPhotos(api_key=api_key, user_id=user_id, content_types=0, per_page=photos_per_page)
+            npages = int(photos['photos']['pages'])
+            total = int(photos['photos']['total'])
+            break
+        except Exception as e:
+            if tries < max_tries:
+                print("ERROR: Unable to get photos")
+                print(str(e))
+                print('Trying again...')
+                log_file.write("ERROR: Unable to get photos\n")
+                log_file.write('{}\n'.format(str(e)))
+                log_file.write('Trying again...\n')
+            else:
+                print("ERROR: FATAL: Unable to get photos after {}".format(max_tries))
+                print(str(e))
+                log_file.write("ERROR: FATAL: Unable to get photos after {} tries\n".format(max_tries))
+                log_file.write('{}\n'.format(str(e)))
+                sys.exit()
 
     if config.photoset_id != '':
         print('ERROR: Invalid photoset id.\nSwitching to user\'s photostream...')
@@ -267,20 +285,32 @@ if npages > max_number_of_pages:
 proc_photos = 0
 
 # process each page
+max_tries = 10
+
 for pg in range(1, npages+1):
 
     # get photos according to run mode
-    try:
-        if mode == 'photoset':
-            page = flickr.photosets.getPhotos(api_key=api_key, user_id=user_id, photoset_id=config.photoset_id, privacy_filter=config.photo_privacy, content_types=0, extras='geo,tags,url_sq', page=pg, per_page=photos_per_page)['photoset']['photo']
-        else:
-            page = flickr.people.getPhotos(api_key=api_key, user_id=user_id, privacy_filter=config.photo_privacy, content_types=0, extras='geo,tags,url_sq', page=pg, per_page=photos_per_page)['photos']['photo']
-    except Exception as e:
-        print("ERROR: FATAL: Unable to get photos")
-        print(e)
-        log_file.write("ERROR: FATAL: Unable to get photos\n")
-        log_file.write(e)
-        sys.exit()
+    for tries in range(1, max_tries+1):
+        try:
+            if mode == 'photoset':
+                page = flickr.photosets.getPhotos(api_key=api_key, user_id=user_id, photoset_id=config.photoset_id, privacy_filter=config.photo_privacy, content_types=0, extras='geo,tags,url_sq', page=pg, per_page=photos_per_page)['photoset']['photo']
+            else:
+                page = flickr.people.getPhotos(api_key=api_key, user_id=user_id, privacy_filter=config.photo_privacy, content_types=0, extras='geo,tags,url_sq', page=pg, per_page=photos_per_page)['photos']['photo']
+            break
+        except Exception as e:
+            if tries < max_tries:
+                print("ERROR: Unable to get photos")
+                print(str(e))
+                print('Trying again...')
+                log_file.write("ERROR: Unable to get photos\n")
+                log_file.write('{}\n'.format(str(e)))
+                log_file.write('Trying again...\n')
+            else:
+                print("ERROR: FATAL: Unable to get photos after {} tries".format(max_tries))
+                print(str(e))
+                log_file.write("ERROR: FATAL: Unable to get photos after {} tries\n".format(max_tries))
+                log_file.write('{}\n'.format(str(e)))
+                sys.exit()
 
     photos_in_page = len(page)
 
