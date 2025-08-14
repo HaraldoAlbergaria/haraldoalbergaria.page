@@ -5,4 +5,5 @@ map/build/*
 !map/build/generate-map-data.py
 !map/build/get-countries-photos.py
 !map/build/update-map.sh
+!map/build/map.log
 
