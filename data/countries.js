@@ -8,6 +8,9 @@ var countries = {
   'HR': 'Croácia',
   'CL': 'Chile',
   'UY': 'Uruguai',
+  'PT': 'Portugal',
+  'ES': 'Espanha',
+  'FR': 'França',
   'WW': 'Mundo Todo'
 }
 
@@ -21,5 +24,8 @@ var countries_en = {
   'HR': 'Croatia',
   'CL': 'Chile',
   'UY': 'Uruguay',
+  'PT': 'Portugal',
+  'ES': 'Spain',
+  'FR': 'France',
   'WW': 'Worldwide'
 }
