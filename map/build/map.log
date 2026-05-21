@@ -3,9 +3,6 @@ Generating map for 'Haraldo Albergaria'
 Extracting photo coordinates and ids...
 Batch 1/4 | 490 photo(s) in 246 marker(s)
 Batch 2/4 | 982 photo(s) in 572 marker(s)
-ERROR: Unable to get photos
-('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
-Trying again...
 Batch 3/4 | 1391 photo(s) in 738 marker(s)
 Batch 4/4 | 1401 photo(s) in 747 marker(s)
 Adding marker(s) to map...
