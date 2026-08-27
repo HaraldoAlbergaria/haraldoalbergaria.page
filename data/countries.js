@@ -11,6 +11,7 @@ var countries = {
   'PT': 'Portugal',
   'ES': 'Espanha',
   'FR': 'França',
+  'EU': 'Europa',
   'WW': 'Mundo Todo'
 }
 
@@ -27,5 +28,6 @@ var countries_en = {
   'PT': 'Portugal',
   'ES': 'Spain',
   'FR': 'France',
+  'EU': 'Europe',
   'WW': 'Worldwide'
 }
