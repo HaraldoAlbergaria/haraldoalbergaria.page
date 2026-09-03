@@ -99,5 +99,9 @@ var photos = [
   ["https://live.staticflickr.com/65535/54151625718_6a9e09e3dd_h.jpg"],
   ["https://live.staticflickr.com/65535/54156220282_d6dd6ff25b_h.jpg"],
   ["https://live.staticflickr.com/65535/54239984093_d416c5fa9e_h.jpg"],
-  ["https://live.staticflickr.com/65535/54262994533_fc0de694fd_h.jpg"]
+  ["https://live.staticflickr.com/65535/54262994533_fc0de694fd_h.jpg"],
+  ["https://live.staticflickr.com/65535/54348175025_b778db6215_h.jpg"],
+  ["https://live.staticflickr.com/65535/55480576369_28d99f7bf1_h.jpg"],
+  ["https://live.staticflickr.com/65535/55480619514_cf81c0ace7_h.jpg"],
+  ["https://live.staticflickr.com/65535/54742233446_082cd13d76_h.jpg"]
 ]
