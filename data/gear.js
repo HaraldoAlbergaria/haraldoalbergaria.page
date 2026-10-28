@@ -14,6 +14,7 @@ var zoom_lens = [
 
 var prime_lens = [
   "Canon RF 16mm f/2.8 STM",
+  "Canon RF 28mm f/2.8 STM",
   "Canon EF-S 24mm f/2.8 STM",
   "Canon EF 50mm f/1.8 STM"
 ]
