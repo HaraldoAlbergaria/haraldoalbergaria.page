@@ -78,21 +78,25 @@
           <div id="cities-title" class="cities-title"></div>
           <div class="cities-column-1">
             <div id="cities-br"><p id="cities-br-title" class="items-title"><img class="tiny_icon" src="map/icons/brazil.svg"/></p></div>
+            <div id="cities-cl"><p id="cities-cl-title" class="items-title"><img class="tiny_icon" src="map/icons/chile.svg"/></p></div>
             <div id="cities-ar"><p id="cities-ar-title" class="items-title"><img class="tiny_icon" src="map/icons/argentina.svg"/></p></div>
             <div id="cities-uy"><p id="cities-uy-title" class="items-title"><img class="tiny_icon" src="map/icons/uruguay.svg"/></p></div>
-            <div id="cities-py"><p id="cities-py-title" class="items-title"><img class="tiny_icon" src="map/icons/paraguay.svg"/></p></div>
           </div>
           <div class="cities-column-2">
-            <div id="cities-cl"><p id="cities-cl-title" class="items-title"><img class="tiny_icon" src="map/icons/chile.svg"/></p></div>
+            <div id="cities-py"><p id="cities-py-title" class="items-title"><img class="tiny_icon" src="map/icons/paraguay.svg"/></p></div>
             <div id="cities-us"><p id="cities-us-title" class="items-title"><img class="tiny_icon" src="map/icons/united-states.svg"/></p></div>
             <div id="cities-hr"><p id="cities-hr-title" class="items-title"><img class="tiny_icon" src="map/icons/croatia.svg"/></p></div>
+            <div id="cities-it"><p id="cities-it-title" class="items-title"><img class="tiny_icon" src="map/icons/italy.svg"/></p></div>
+            <div id="cities-va"><p id="cities-va-title" class="items-title"><img class="tiny_icon" src="map/icons/vatican.svg"/></p></div>
           </div>
           <div class="cities-column-3">
-            <div id="cities-it"><p id="cities-it-title" class="items-title"><img class="tiny_icon" src="map/icons/italy.svg"/></p></div>
+            <div id="cities-pt"><p id="cities-pt-title" class="items-title"><img class="tiny_icon" src="map/icons/portugal.svg"/></p></div>
             <div id="cities-es"><p id="cities-es-title" class="items-title"><img class="tiny_icon" src="map/icons/spain.svg"/></p></div>
             <div id="cities-fr"><p id="cities-fr-title" class="items-title"><img class="tiny_icon" src="map/icons/france.svg"/></p></div>
-            <div id="cities-pt"><p id="cities-pt-title" class="items-title"><img class="tiny_icon" src="map/icons/portugal.svg"/></p></div>
-            <div id="cities-va"><p id="cities-va-title" class="items-title"><img class="tiny_icon" src="map/icons/vatican.svg"/></p></div>
+            <div id="cities-be"><p id="cities-be-title" class="items-title"><img class="tiny_icon" src="map/icons/belgium.svg"/></p></div>
+            <div id="cities-lu"><p id="cities-lu-title" class="items-title"><img class="tiny_icon" src="map/icons/luxembourg.svg"/></p></div>
+            <div id="cities-nl"><p id="cities-nl-title" class="items-title"><img class="tiny_icon" src="map/icons/netherlands.svg"/></p></div>
+            <div id="cities-gb"><p id="cities-gb-title" class="items-title"><img class="tiny_icon" src="map/icons/united-kingdom.svg"/></p></div>
           </div>
        </div>
 
@@ -229,7 +233,6 @@
      exhibits_list.append(list_item);
    }
 
-
    document.getElementById('cities-title').innerText = strings_dict['CITIES'];
    document.getElementById('cities-br-title').append(countries['BR']);
    document.getElementById('cities-ar-title').append(countries['AR']);
@@ -243,6 +246,10 @@
    document.getElementById('cities-es-title').append(countries['ES']);
    document.getElementById('cities-fr-title').append(countries['FR']);
    document.getElementById('cities-pt-title').append(countries['PT']);
+   document.getElementById('cities-be-title').append(countries['BE']);
+   document.getElementById('cities-lu-title').append(countries['LU']);
+   document.getElementById('cities-nl-title').append(countries['NL']);
+   document.getElementById('cities-gb-title').append(countries['GB']);
 
    for (var i = 0; i < cities.length; i++) {
      var list_item = document.createElement('P');

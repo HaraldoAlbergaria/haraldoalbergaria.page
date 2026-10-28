@@ -11,6 +11,10 @@ var countries = {
   'PT': 'Portugal',
   'ES': 'Espanha',
   'FR': 'França',
+  'BE': 'Bélgica',
+  'LU': 'Luxemburgo',
+  'NL': 'Holanda',
+  'GB': 'Inglaterra',
   'EU': 'Europa',
   'WW': 'Mundo Todo'
 }
@@ -28,6 +32,10 @@ var countries_en = {
   'PT': 'Portugal',
   'ES': 'Spain',
   'FR': 'France',
+  'BE': 'Belgium',
+  'LU': 'Luxembourg',
+  'NL': 'Netherlands',
+  'GB': 'United Kingdom',
   'EU': 'Europe',
   'WW': 'Worldwide'
 }
